@@ -795,6 +795,7 @@ export class ContributingCompaniesComponent implements OnInit {
                   (data) => {
                     // console.log(data)
                     this.pdf.CertificadoDeclaracion(dataCertificados.Cuerpo[0], xdata.contenido, this.CrearCert.token)
+                    // console.log(dataCertificados.Cuerpo[0], xdata.contenido, this.CrearCert.token)
                     this.utilService.alertConfirmMini('success', 'Certificado Descagado Exitosamente')
                   },
                   (err) => {

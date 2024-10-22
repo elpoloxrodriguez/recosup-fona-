@@ -297,6 +297,8 @@ export class RegistrationManagementComponent implements OnInit {
 
   public SelectBancosMIF
 
+  public role:any = ""
+
   public tipoDocumento
   public RIFEMPRESA
   public CEDULAREPRESENTANTE
@@ -368,8 +370,6 @@ export class RegistrationManagementComponent implements OnInit {
   }
 
 
-
-
   // Private
   private tempDataCierreFiscal = [];
   private tempDataUtilidadAportes = []
@@ -400,6 +400,8 @@ export class RegistrationManagementComponent implements OnInit {
     this.url = this.uri[0] + this.uri[1]
     this.sectionBlockUI.start('Subiendo Documento, Porfavor Espere!!!');
     this.token = jwt_decode(sessionStorage.getItem('token'));
+    // console.log(this.token.Usuario[0])
+    this.role = this.token.Usuario[0].EsAdministrador
     this.RIFEMPRESA = this.token.Usuario[0].Codigo.slice(1, -1)
     this.CEDULAREPRESENTANTE = this.token.Usuario[0].Cedula
     this.Empresa.Rif = this.token.Usuario[0].Codigo.slice(1)

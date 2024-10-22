@@ -47,7 +47,7 @@
                 <div class="mt-md-0 mt-2">
                   <div class="invoice-date-wrapper">
                     <button type="button" class="btn btn-icon btn-success" rippleEffect
-                      (click)="Descargar(EditarEmpresa)">
+                      (click)="Descargar(EditarEmpresa)" *ngIf="role !== '0'">
                       <span [data-feather]="'download'"></span>
                       Descargar
                     </button>
